@@ -14,4 +14,12 @@ const leerPosts = async () => {
     console.log("Registros de la BD:", rows);
     return rows;
   };
+
+  // función para escribir los posts
+const escribirPosts = async (titulo, url, descripcion) => {
+    const consulta = "INSERT INTO posts values (DEFAULT,$1,$2,$3,0)";
+    const values = [titulo, url, descripcion];
+    await pool.query(consulta, values);
+  };
   
+  module.exports = { leerPosts, escribirPosts };
