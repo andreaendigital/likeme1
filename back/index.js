@@ -28,3 +28,5 @@ app.post("/posts", async (req, res) => {
   await escribirPosts(titulo, url, descripcion);
   res.send("El post fue agregado");
 });
+
+//comprobación de conexiones y agregar muestra a bbdd -> ok
